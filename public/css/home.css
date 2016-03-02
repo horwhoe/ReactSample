@@ -1,0 +1,25 @@
+
+/* footer */
+.footer-text {
+  color: #ffffff;
+  padding-top: 30px;
+}
+.footer-text, a {
+  color: #ffffff;
+}
+.footer-text-right {
+  margin-left: 100px;
+  padding: 20px;
+  background-color: hotpink;
+}
+.footer-bg {
+  position: relative;
+  background-color: #a2101d;
+  min-height:120px;
+
+    /*background-color: #a2101d;*/
+    /*border-top:10px white solid;*/
+}
+
+
+
