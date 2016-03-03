@@ -15,6 +15,7 @@ var mainJs = React.createClass({
 
     return (
       <div>
+        <script src="/js/vendor/react/react-0.10.0.min.js"></script>
         <script src={bootstrapMinJs.src}></script>
         <script src={homeJs.src}></script>
         <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>

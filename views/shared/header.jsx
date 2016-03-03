@@ -12,7 +12,7 @@ var footer = React.createClass({
 
     return (
       <div className="text-center">
-        <h1>This is the header</h1>
+        <h1>This is the header - very good</h1>
       </div>
     );
   }
