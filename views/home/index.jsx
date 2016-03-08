@@ -12,8 +12,13 @@ var Layout = React.createClass({
     title: React.PropTypes.string
   },
 
+
+
+
   render: function() {
     const prefix = '';
+    let tableData =  [['mr', 'stanley'], ['mr','eugene'], ['ms','kalar']];
+    let tableHeader = ['title', 'name'];
     return (
         <html lang='en-us'>
 
@@ -29,11 +34,17 @@ var Layout = React.createClass({
               <h3>There is nothing here!</h3>
             </div>
 
+            <Table tableData={tableData} tableHeader={tableHeader} />
+
+            <EmptyRow h="50"></EmptyRow>
+
+            <div id="timer" className="text-center"></div>
+
             <EmptyRow h="30"></EmptyRow>
 
             <Footer prefix={prefix}></Footer>
 
-            <script src="/js/vendor/react/react-0.10.0.min.js"></script>
+
 
             <MainJs prefix={prefix}></MainJs>
 
