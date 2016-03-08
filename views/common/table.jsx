@@ -44,43 +44,47 @@ var Table = React.createClass({
     let datas = this.props.tableData;
     let headerTitle = this.props.tableHeader;
     let final = [];
-    //let header = [];
+    let header = [];
+    let dataRow = [];
+
+    if (headerTitle && headerTitle.length > 0) {
+      headerTitle.map(function (row, i) {
+        header.push(
+          <th className="text-center">{row}</th>
+        )
+      })
+    }
 
     if (datas && datas.length > 0) {
-
-      final.push(<table className="table table-bordered table-striped">);
-      final.push(<thead>);
-        final.push(
-          {headerTitle.map(function(row, i){
-            //if (i!=0) {
-              return (
-                <th className="text-center">{row}</th>
+      datas.map(function (row, i) {
+        dataRow.push(
+          <tr>
+            {row.map(function (item, j) {
+              let theItem = [];
+              //if (j != 0) {
+              theItem.push(
+                <td className="text-center tableItem" onClick={that.tdClick.bind(this, row[0]?row[0]:'')}>{item}</td>
               )
-            //}
-          })}
-        );
-        final.push(</thead>);
-      final.push(<tbody>);
-      final.push(
-        {datas.map(function(row, i){
-          return (
-            <tr>
-              {row.map(function(item, j){
-                let theItem = [];
-                //if (j != 0) {
-                  theItem.push(
-                    <td className="text-center tableItem" onClick={that.tdClick.bind(this, row[0]?row[0]:'')}>{item}</td>
-                  )
-                //}
+              //}
 
-                return theItem;
-              })}
-            </tr>
-          )
-        })}
-      );
-      final.push(</tbody>);
-      final.push(</table>);
+              return theItem;
+            })}
+          </tr>
+        )
+      })
+    }
+
+    if (datas && datas.length > 0) {
+      let classes = 'table table-bordered table-striped';
+      final.push(
+        <table className={classes}>
+          <thead>
+            {header}
+          </thead>
+          <tbody>
+            {dataRow}
+          </tbody>
+        </table>);
     } else {
       final.push(<div className="alert alert-warning text-center" role="alert">No Data Found!</div>);
     }
