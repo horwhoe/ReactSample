@@ -17,8 +17,8 @@ var Layout = React.createClass({
 
   render: function() {
     const prefix = '';
-    let tableData =  [['123','mr', 'stanley'], ['123','mr','eugene'], ['123','ms','kalar']];
-    let tableHeader = ['','title', 'name'];
+    let tableData =  [['mr', 'stanley'], ['mr','eugene'], ['ms','kalar']];
+    let tableHeader = ['title', 'name'];
     return (
         <html lang='en-us'>
 
