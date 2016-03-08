@@ -34,10 +34,6 @@ var Layout = React.createClass({
               <h3>There is nothing here!</h3>
             </div>
 
-            <Table tableData={tableData} tableHeader={tableHeader} />
-
-            <EmptyRow h="50"></EmptyRow>
-
             <div id="timer" className="text-center"></div>
 
             <EmptyRow h="30"></EmptyRow>
