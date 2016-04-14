@@ -20,11 +20,13 @@ Steps:
 
 1. After cloning or forking this project, run `npm install` to install dependencies.
 
-2. Run `gulp` to build the project.
+2. Run `gulp build` to build the project.
 
-3. After building with `gulp`, gulp will watch for code changes.
+3. Run `gulp` to start the app and watch for code changes.
 
 4. You may now browse to `http://127.0.0.1:8088/`.
+
+5. Gulp will watch for changes to the jsx files and will auto-rebuild. Hit refresh on the browser and you will see the changes.
 
 
 This project can be started with `npm start`.
