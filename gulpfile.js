@@ -12,6 +12,7 @@ var _ = require('lodash');
 var transform = require('vinyl-transform');
 var react = require('gulp-react');
 var concat = require('gulp-concat');
+var nodemon = require('gulp-nodemon');
 
 
 var bundlejs = 'bundle.js';
@@ -39,6 +40,18 @@ gulp.task('babel', function() {
 
 gulp.task('watch', function() {
   gulp.watch(['./src/**/*.js', './views/**/*.jsx'], ['babel', 'browserify']);
+});
+
+gulp.task('server', function () {
+  nodemon({
+    script: 'app.js'
+    , ext: 'jsx'
+    , env: { 'NODE_ENV': 'development' }
+    , tasks: ['babel', 'browserify']
+  })
+    .on('restart', function() {
+      console.log('... restarted ...');
+    })
 });
 
 //gulp.task('copy-files', function() {
@@ -111,4 +124,5 @@ gulp.task('clean:dist', function() {
 
 
 //gulp.task('default', ['browserify-Admin', 'browserify-Vege', 'watch']);
-gulp.task('default', ["clean:dist", 'babel', 'browserify', "watch"]);
+gulp.task('build', ["clean:dist", 'babel', 'browserify']);
+gulp.task('default', ["server", "watch"]);
